@@ -16,3 +16,6 @@ public class HodsmApplication {
 
 //Lekin important point: Docker ke bina bhi project ko normally run kar sakte ho, agar project ke required dependencies (Java/Node/MySQL etc.) manually installed hain.
 //Dockerfile ka fayda mainly same environment mein easily run/deploy karna hai.
+
+
+// docker image abhi maine upload kiya docker hub pr ab next process
