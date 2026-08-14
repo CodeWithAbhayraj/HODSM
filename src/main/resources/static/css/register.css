@@ -1,0 +1,205 @@
+/* ==========================================================
+
+   HOD Student Management System
+   register.css — Student Registration Page
+   (self-contained: this page links ONLY this stylesheet)
+
+========================================================== */
+
+:root{
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+    --primary-soft:#eff6ff;
+    --bg:#f4f6fb;
+    --surface:#ffffff;
+    --surface-alt:#f8fafc;
+    --text:#1e293b;
+    --text-muted:#64748b;
+    --text-light:#94a3b8;
+    --border:#e2e8f0;
+    --radius-sm:8px;
+    --radius:14px;
+    --radius-lg:20px;
+    --shadow-sm:0 1px 3px rgba(15,23,42,0.06);
+    --shadow-md:0 8px 24px rgba(15,23,42,0.08);
+    --shadow-lg:0 20px 45px rgba(15,23,42,0.12);
+    --transition:all 0.25s ease;
+    --font-main:'Poppins', 'Segoe UI', sans-serif;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:var(--font-main);
+    color:var(--text);
+    line-height:1.6;
+    background:
+            radial-gradient(circle at 15% 15%, var(--primary-soft), transparent 50%),
+            radial-gradient(circle at 85% 85%, #f5f3ff, transparent 50%),
+            var(--bg);
+    min-height:100vh;
+    scrollbar-width:thin;
+    scrollbar-color:var(--primary) var(--border);
+}
+
+::-webkit-scrollbar{ width:10px; }
+::-webkit-scrollbar-thumb{ background:var(--primary); border-radius:20px; }
+::-webkit-scrollbar-track{ background:var(--border); }
+
+.container{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:50px 20px;
+}
+
+.register-box{
+    width:100%;
+    max-width:480px;
+    background:var(--surface);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-lg);
+    padding:44px 40px;
+    animation:fadeIn 0.6s ease both;
+}
+
+.register-box h2{
+    text-align:center;
+    font-size:1.5rem;
+    font-weight:600;
+    margin-bottom:30px;
+    color:var(--text);
+}
+
+.input-group{
+    margin-bottom:18px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.input-group label{
+    font-size:0.85rem;
+    font-weight:500;
+    color:var(--text-muted);
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+    padding:12px 14px;
+    border:1.5px solid var(--border);
+    border-radius:var(--radius-sm);
+    font-size:0.95rem;
+    color:var(--text);
+    background:var(--surface-alt);
+    transition:var(--transition);
+    width:100%;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus{
+    outline:none;
+    border-color:var(--primary);
+    background:var(--surface);
+    box-shadow:0 0 0 4px var(--primary-soft);
+}
+
+.input-group input::placeholder{
+    color:var(--text-light);
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.password-box{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.password-box input{
+    padding-right:44px;
+    width:100%;
+}
+
+.password-box i{
+    position:absolute;
+    right:14px;
+    color:var(--text-muted);
+    cursor:pointer;
+    transition:var(--transition);
+}
+
+.password-box i:hover{
+    color:var(--primary);
+}
+
+button.btn,
+.btn{
+    width:100%;
+    padding:14px;
+    margin-top:8px;
+    background:linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color:#fff;
+    font-weight:500;
+    font-size:0.95rem;
+    border:none;
+    border-radius:var(--radius-sm);
+    cursor:pointer;
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--shadow-md);
+}
+
+.login-link{
+    text-align:center;
+    margin-top:22px;
+    font-size:0.9rem;
+    color:var(--text-muted);
+}
+
+.login-link a{
+    color:var(--primary);
+    font-weight:600;
+    text-decoration:none;
+}
+
+.login-link a:hover{
+    text-decoration:underline;
+}
+
+.profile-preview{
+    width:90px;
+    height:90px;
+    margin-top:10px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid var(--surface);
+    box-shadow:var(--shadow-sm);
+    background:var(--border);
+}
+
+@keyframes fadeIn{
+    from{ opacity:0; transform:translateY(14px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+@media (max-width:520px){
+    .register-box{ padding:32px 24px; }
+    .row{ grid-template-columns:1fr; }
+}

@@ -1,0 +1,525 @@
+/* ==========================================================
+
+   HOD Student Management System
+   style.css — Global Design Foundation
+
+========================================================== */
+
+/* =========================
+   DESIGN TOKENS
+========================= */
+
+:root{
+
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+    --primary-light:#60a5fa;
+    --primary-soft:#eff6ff;
+
+    --accent:#7c3aed;
+
+    --success:#16a34a;
+    --success-soft:#dcfce7;
+    --danger:#dc2626;
+    --danger-soft:#fee2e2;
+    --warning:#d97706;
+    --warning-soft:#fef3c7;
+
+    --bg:#f4f6fb;
+    --surface:#ffffff;
+    --surface-alt:#f8fafc;
+
+    --text:#1e293b;
+    --text-muted:#64748b;
+    --text-light:#94a3b8;
+
+    --border:#e2e8f0;
+    --track:#e5e7eb;
+
+    --radius-sm:8px;
+    --radius:14px;
+    --radius-lg:20px;
+
+    --shadow-sm:0 1px 3px rgba(15,23,42,0.06);
+    --shadow-md:0 8px 24px rgba(15,23,42,0.08);
+    --shadow-lg:0 20px 45px rgba(15,23,42,0.12);
+
+    --transition:all 0.25s ease;
+
+    --font-main:'Poppins', 'Segoe UI', sans-serif;
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:var(--font-main);
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+    border:none;
+    background:none;
+}
+
+input,
+select,
+textarea{
+    font-family:inherit;
+    outline:none;
+}
+
+h1, h2, h3, h4{
+    font-weight:600;
+    color:var(--text);
+    letter-spacing:-0.01em;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+*{
+    scrollbar-width:thin;
+    scrollbar-color:var(--primary) var(--track);
+}
+
+::-webkit-scrollbar{
+    width:10px;
+    height:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--primary);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--primary-dark);
+}
+
+::-webkit-scrollbar-track{
+    background:var(--track);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 30px;
+    background:linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color:#fff;
+    font-weight:500;
+    font-size:0.95rem;
+    border-radius:var(--radius-sm);
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+    border:none;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--shadow-md);
+    background:linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+.btn:active{
+    transform:translateY(0);
+}
+
+.btn.admin{
+    background:linear-gradient(135deg, var(--accent), #5b21b6);
+}
+
+.btn.admin:hover{
+    background:linear-gradient(135deg, #5b21b6, var(--accent));
+}
+
+button:disabled{
+    opacity:0.6;
+    cursor:not-allowed;
+    transform:none !important;
+}
+
+
+/* =========================
+   FORM CONTROLS
+   (shared by login / register / profile / dashboard forms)
+========================= */
+
+.input-group{
+    margin-bottom:20px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.input-group label{
+    font-size:0.85rem;
+    font-weight:500;
+    color:var(--text-muted);
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+    padding:12px 14px;
+    border:1.5px solid var(--border);
+    border-radius:var(--radius-sm);
+    font-size:0.95rem;
+    color:var(--text);
+    background:var(--surface-alt);
+    transition:var(--transition);
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus{
+    border-color:var(--primary);
+    background:var(--surface);
+    box-shadow:0 0 0 4px var(--primary-soft);
+}
+
+.input-group input[readonly]{
+    background:var(--border);
+    color:var(--text-muted);
+    cursor:not-allowed;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder{
+    color:var(--text-light);
+}
+
+.input-group textarea{
+    resize:vertical;
+    min-height:90px;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+/* password field with toggle eye icon */
+
+.password-box,
+.password-wrapper{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.password-box input,
+.password-wrapper input{
+    width:100%;
+    padding-right:44px;
+}
+
+.password-box i,
+.password-wrapper i{
+    position:absolute;
+    right:14px;
+    color:var(--text-muted);
+    cursor:pointer;
+    transition:var(--transition);
+}
+
+.password-box i:hover,
+.password-wrapper i:hover{
+    color:var(--primary);
+}
+
+.input-group.password-group{
+    position:relative;
+}
+
+/* profile photo preview */
+
+.profile-preview{
+    width:90px;
+    height:90px;
+    margin-top:10px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid var(--surface);
+    box-shadow:var(--shadow-sm);
+    background:var(--border);
+}
+
+
+/* =========================
+   GENERIC CARD
+========================= */
+
+.card{
+    background:var(--surface);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+    padding:24px;
+    transition:var(--transition);
+}
+
+.card:hover{
+    box-shadow:var(--shadow-md);
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   SHARED TOPBAR
+   (auth pages + admin pages)
+========================= */
+
+.topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 40px;
+    background:var(--surface);
+    box-shadow:var(--shadow-sm);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.topbar .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:600;
+    font-size:1.1rem;
+    color:var(--primary-dark);
+}
+
+.topbar .logo i{
+    font-size:1.4rem;
+    color:var(--primary);
+}
+
+.topbar nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.topbar nav a{
+    font-weight:500;
+    color:var(--text-muted);
+    transition:var(--transition);
+    position:relative;
+}
+
+.topbar nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-4px;
+    width:0;
+    height:2px;
+    background:var(--primary);
+    transition:var(--transition);
+}
+
+.topbar nav a:hover{
+    color:var(--primary);
+}
+
+.topbar nav a:hover::after{
+    width:100%;
+}
+
+.home-btn,
+.login-btn{
+    padding:10px 20px;
+    border-radius:var(--radius-sm);
+    font-weight:500;
+    transition:var(--transition);
+}
+
+.home-btn{
+    color:var(--text-muted);
+    margin-right:10px;
+}
+
+.home-btn:hover{
+    color:var(--primary);
+}
+
+a.login-btn{
+    background:var(--primary-soft);
+    color:var(--primary-dark);
+}
+
+a.login-btn:hover{
+    background:var(--primary);
+    color:#fff;
+}
+
+
+/* =========================
+   HOME PAGE (index.html)
+========================= */
+
+header:not(.topbar){
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 60px;
+    background:var(--surface);
+    box-shadow:var(--shadow-sm);
+}
+
+header .logo h1{
+    color:var(--primary-dark);
+    font-size:1.5rem;
+    letter-spacing:0.5px;
+}
+
+header nav{
+    display:flex;
+    gap:30px;
+}
+
+header nav a{
+    font-weight:500;
+    color:var(--text-muted);
+    transition:var(--transition);
+}
+
+header nav a:hover{
+    color:var(--primary);
+}
+
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:110px 24px;
+    background:
+            radial-gradient(circle at 20% 20%, var(--primary-soft), transparent 55%),
+            radial-gradient(circle at 80% 80%, #f5f3ff, transparent 55%),
+            var(--bg);
+}
+
+.hero-content{
+    max-width:720px;
+    animation:fadeIn 0.8s ease both;
+}
+
+.hero-content h1{
+    font-size:2.6rem;
+    line-height:1.25;
+    margin-bottom:20px;
+    background:linear-gradient(135deg, var(--primary-dark), var(--accent));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-content p{
+    color:var(--text-muted);
+    font-size:1.05rem;
+    margin-bottom:36px;
+}
+
+.hero .buttons{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+    padding:80px 60px;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.features .card{
+    text-align:center;
+    border-top:4px solid var(--primary);
+}
+
+.features .card h2{
+    font-size:1.15rem;
+    margin-bottom:12px;
+    color:var(--primary-dark);
+}
+
+.features .card p{
+    color:var(--text-muted);
+    font-size:0.92rem;
+}
+
+footer{
+    text-align:center;
+    padding:28px;
+    color:var(--text-light);
+    font-size:0.85rem;
+    border-top:1px solid var(--border);
+    background:var(--surface);
+}
+
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(14px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}

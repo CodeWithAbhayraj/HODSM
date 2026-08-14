@@ -1,0 +1,67 @@
+/* ==========================================================
+
+   HOD Student Management System
+   table.css — Table Enhancements
+   (optional extra polish — see note below for linking)
+
+========================================================== */
+
+.table tbody tr:nth-child(even){
+    background:#fafbff;
+}
+
+.table tbody tr:nth-child(even):hover{
+    background:var(--surface-alt, #f8fafc);
+}
+
+/* wrap a <table class="table"> in <div class="table-wrapper"> for
+   clean horizontal scrolling on small screens */
+.table-wrapper{
+    width:100%;
+    overflow-x:auto;
+    border-radius:14px;
+    box-shadow:0 1px 3px rgba(15,23,42,0.06);
+}
+
+.table-wrapper .table{
+    box-shadow:none;
+}
+
+/* status pill helper — add e.g. class="status status-approved"
+   alongside the status text returned from the API */
+.status{
+    display:inline-block;
+    padding:5px 14px;
+    border-radius:999px;
+    font-size:0.78rem;
+    font-weight:600;
+    text-transform:capitalize;
+}
+
+.status-pending{
+    background:#fef3c7;
+    color:#d97706;
+}
+
+.status-approved{
+    background:#dcfce7;
+    color:#16a34a;
+}
+
+.status-rejected{
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+.status-draft{
+    background:#e2e8f0;
+    color:#64748b;
+}
+
+/* empty state */
+.table-empty{
+    text-align:center;
+    padding:40px 20px;
+    color:#94a3b8;
+    font-size:0.9rem;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Details | HODSM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/student-details.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-user-shield"></i>
+        <span>HODSM Admin</span>
+    </div>
+
+    <nav>
+
+        <a href="admin-dashboard.html">Dashboard</a>
+
+        <a href="#" onclick="logoutAdmin()">Logout</a>
+
+    </nav>
+
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Student Complete Profile</h2>
+
+        <table class="table">
+
+            <tr>
+                <th>Photo</th>
+                <td>
+                    <img id="studentPhoto"
+                         src=""
+                         alt="Student Photo"
+                         width="120"
+                         style="border-radius:10px;">
+                </td>
+            </tr>
+
+            <tr>
+                <th>Full Name</th>
+                <td id="studentName"></td>
+            </tr>
+
+            <tr>
+                <th>Email</th>
+                <td id="studentEmail"></td>
+            </tr>
+
+            <tr>
+                <th>Mobile</th>
+                <td id="studentMobile"></td>
+            </tr>
+
+            <tr>
+                <th>PRN</th>
+                <td id="studentPrn"></td>
+            </tr>
+
+            <tr>
+                <th>Roll Number</th>
+                <td id="studentRollNo"></td>
+            </tr>
+
+            <tr>
+                <th>Department</th>
+                <td id="studentDepartment"></td>
+            </tr>
+
+            <tr>
+                <th>Semester</th>
+                <td id="studentSemester"></td>
+            </tr>
+
+            <tr>
+                <th>Admission Year</th>
+                <td id="studentAdmissionYear"></td>
+            </tr>
+
+            <tr>
+                <th>Date of Birth</th>
+                <td id="studentDob"></td>
+            </tr>
+
+            <tr>
+                <th>Gender</th>
+                <td id="studentGender"></td>
+            </tr>
+
+            <tr>
+                <th>Address</th>
+                <td id="studentAddress"></td>
+            </tr>
+
+            <tr>
+                <th>Aadhaar</th>
+                <td id="studentAadhaar"></td>
+            </tr>
+
+            <tr>
+                <th>College ID</th>
+                <td id="studentCollegeId"></td>
+            </tr>
+
+            <tr>
+                <th>Status</th>
+                <td id="studentStatus"></td>
+            </tr>
+
+            <tr>
+                <th>Remarks</th>
+                <td id="studentRemarks"></td>
+            </tr>
+
+        </table>
+
+        <br>
+
+        <div style="display:flex;gap:15px;justify-content:center;">
+
+            <button
+                    class="approve-btn"
+                    onclick="approveStudent()">
+
+                <i class="fa-solid fa-circle-check"></i>
+                Approve
+
+            </button>
+
+            <button
+                    class="reject-btn"
+                    onclick="rejectStudent()">
+
+                <i class="fa-solid fa-circle-xmark"></i>
+                Reject
+
+            </button>
+
+            <button onclick="goBack()">
+
+                Back
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/student-details.js"></script>
+<script src="js/logout.js"></script>
+
+</body>
+
+</html>

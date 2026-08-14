@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile | HODSM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/profile.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-user-graduate"></i>
+
+        <span>HODSM</span>
+
+    </div>
+
+    <nav>
+
+        <a href="student-dashboard.html">Dashboard</a>
+
+        <a href="student-profile.html">Profile</a>
+
+        <a href="#" onclick="logoutStudent()">Logout</a>
+
+    </nav>
+
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Student Profile</h2>
+
+        <form id="studentProfileForm">
+
+            <!-- PRN + Roll -->
+
+            <div class="row">
+
+                <div class="input-group">
+
+                    <label>PRN</label>
+
+                    <input
+                            type="text"
+                            id="prn"
+                            maxlength="10"
+                            minlength="10"
+                            pattern="[0-9]{10}"
+                            inputmode="numeric"
+                            placeholder="Enter 10 Digit PRN"
+                            required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Roll Number</label>
+
+                    <input
+                            type="text"
+                            id="rollNo"
+                            required>
+
+                </div>
+
+            </div>
+
+            <!-- Department + Semester -->
+
+            <div class="row">
+
+                <div class="input-group">
+
+                    <label>Department</label>
+
+                    <select id="department" required>
+
+                        <option value="">Select Department</option>
+
+                        <option value="MCA">MCA</option>
+
+                        <option value="MBA">MBA</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Semester</label>
+
+                    <input
+                            type="number"
+                            id="semester"
+                            min="1"
+                            max="4"
+                            placeholder="Enter Semester"
+                            required>
+
+                </div>
+
+            </div>
+
+            <!-- Admission + DOB -->
+
+            <div class="row">
+
+                <div class="input-group">
+
+                    <label>Admission Year</label>
+
+                    <select id="admissionYear" required>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Date of Birth</label>
+
+                    <input
+                            type="date"
+                            id="dob"
+                            required>
+
+                </div>
+
+            </div>
+
+            <!-- Gender + College -->
+
+            <div class="row">
+
+                <div class="input-group">
+
+                    <label>Gender</label>
+
+                    <select id="gender">
+
+                        <option>Male</option>
+
+                        <option>Female</option>
+
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>College ID</label>
+
+                    <input
+                            type="text"
+                            id="collegeId"
+                            value="141"
+                            readonly>
+
+                </div>
+
+            </div>
+
+            <!-- Address -->
+
+            <div class="input-group">
+
+                <label>Address</label>
+
+                <textarea
+                        id="address"
+                        rows="3"
+                        placeholder="Enter Address"></textarea>
+
+            </div>
+
+            <!-- Aadhaar + Photo -->
+
+            <div class="row">
+
+                <div class="input-group">
+
+                    <label>Aadhaar</label>
+
+                    <input
+                            type="text"
+                            id="aadhaar"
+                            maxlength="12"
+                            placeholder="Enter Aadhaar Number">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Profile Photo</label>
+
+                    <input
+                            type="file"
+                            id="photo"
+                            accept="image/png,image/jpeg,image/jpg,image/*">
+
+                    <img
+                            id="photoPreview"
+                            src=""
+                            alt="Profile Photo"
+                            class="profile-preview">
+
+                </div>
+
+            </div>
+
+            <br>
+
+            <button
+                    type="submit"
+                    class="btn">
+
+                Save Profile
+
+            </button>
+
+            <button
+                    type="button"
+                    class="btn"
+                    onclick="submitProfile()">
+
+                Submit Verification
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/logout.js"></script>
+
+</body>
+
+</html>

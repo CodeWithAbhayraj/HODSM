@@ -1,0 +1,63 @@
+/* ==========================================================
+
+   HOD Student Management System
+   admin.css — Admin-Only Accents
+   (optional extra polish — see note below for linking)
+
+========================================================== */
+
+.topbar .logo i{
+    color:#7c3aed;
+}
+
+.topbar nav a.active{
+    color:#7c3aed;
+}
+
+.topbar nav a.active::after{
+    background:#7c3aed;
+    width:100%;
+}
+
+/* subtle admin ribbon on dashboard cards */
+.dashboard-cards .card{
+    position:relative;
+}
+
+.dashboard-cards .card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:linear-gradient(135deg, rgba(124,58,237,0.03), transparent 60%);
+    pointer-events:none;
+}
+
+/* confirmation-style inline alerts, if you add them via JS */
+.admin-alert{
+    padding:14px 18px;
+    border-radius:10px;
+    font-size:0.9rem;
+    margin-bottom:20px;
+    border-left:4px solid #2563eb;
+    background:#eff6ff;
+    color:#1d4ed8;
+}
+
+.admin-alert.success{
+    border-left-color:#16a34a;
+    background:#dcfce7;
+    color:#16a34a;
+}
+
+.admin-alert.error{
+    border-left-color:#dc2626;
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+@media print{
+    .topbar, .search-box, .actions, button{
+        display:none !important;
+    }
+}

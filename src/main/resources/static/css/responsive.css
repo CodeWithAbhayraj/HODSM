@@ -1,0 +1,183 @@
+/* ==========================================================
+
+   HOD Student Management System
+   responsive.css — Breakpoints
+   Link this LAST, after every other stylesheet, on each page.
+
+========================================================== */
+
+/* =========================
+   TABLET  ≤ 992px
+========================= */
+
+@media (max-width:992px){
+
+    .features{
+        grid-template-columns:repeat(2, 1fr);
+        padding:60px 32px;
+    }
+
+    .dashboard-cards{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+    .login-container{
+        max-width:640px;
+    }
+
+    .sidebar{
+        width:210px;
+    }
+
+    .content{
+        padding:28px 24px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE  ≤ 768px
+========================= */
+
+@media (max-width:768px){
+
+    .topbar{
+        flex-direction:column;
+        gap:14px;
+        padding:16px 20px;
+    }
+
+    .topbar nav{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    header:not(.topbar){
+        flex-direction:column;
+        gap:14px;
+        padding:18px 24px;
+        text-align:center;
+    }
+
+    header nav{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        padding:70px 20px;
+    }
+
+    .hero-content h1{
+        font-size:1.9rem;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+        padding:50px 24px;
+    }
+
+    .login-container{
+        grid-template-columns:1fr;
+        max-width:420px;
+    }
+
+    .left-panel{
+        padding:32px 28px;
+    }
+
+    .right-panel{
+        padding:32px 28px;
+    }
+
+    .row{
+        grid-template-columns:1fr;
+    }
+
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+        min-height:auto;
+        padding:16px 20px;
+    }
+
+    .sidebar ul{
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+    .content{
+        padding:24px 18px;
+    }
+
+    .dashboard{
+        padding:24px 20px;
+    }
+
+    .dashboard-cards{
+        grid-template-columns:repeat(2, 1fr);
+        gap:14px;
+    }
+
+    .search-box{
+        max-width:100%;
+        flex-direction:column;
+    }
+
+    .table-wrapper,
+    .dashboard .table,
+    .container .table{
+        overflow-x:auto;
+        display:block;
+    }
+
+    .table{
+        min-width:640px;
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONES  ≤ 480px
+========================= */
+
+@media (max-width:480px){
+
+    .dashboard-cards{
+        grid-template-columns:1fr;
+    }
+
+    .register-box,
+    .card-container{
+        padding:28px 22px;
+    }
+
+    .hero-content h1{
+        font-size:1.55rem;
+    }
+
+    .hero .buttons{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .hero .buttons .btn{
+        width:100%;
+    }
+
+    .actions{
+        flex-direction:column;
+    }
+
+    .actions button{
+        width:100%;
+    }
+
+}

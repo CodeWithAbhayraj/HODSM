@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | HODSM</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <h2>HOD Student Management System</h2>
+
+    <button onclick="logout()">
+
+        Logout
+
+    </button>
+
+</header>
+
+<div class="container">
+
+    <aside class="sidebar">
+
+        <h3>Student Menu</h3>
+
+        <ul>
+
+            <li>
+
+                <a href="student-dashboard.html">
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="student-profile.html">
+
+                    Create / Update Profile
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="javascript:void(0)"
+                   onclick="submitProfile()">
+
+                    Submit For Verification
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="javascript:void(0)"
+                   onclick="deleteAccount()">
+
+                    Delete Account
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <main class="content">
+
+        <h2>
+
+            Welcome,
+
+            <span id="studentName">
+
+                Student
+
+            </span>
+
+        </h2>
+
+        <div class="card-container">
+
+            <div class="card">
+
+                <h4>Student ID</h4>
+
+                <p id="studentId">
+
+                    --
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h4>Email</h4>
+
+                <p id="studentEmail">
+
+                    --
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h4>Mobile</h4>
+
+                <p id="studentMobile">
+
+                    --
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h4>Verification Status</h4>
+
+                <p id="verificationStatus">
+
+                    DRAFT
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <button
+                    onclick="location.href='student-profile.html'">
+
+                Create / Update Profile
+
+            </button>
+
+            <button
+                    onclick="submitProfile()">
+
+                Submit Profile
+
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="../js/config.js"></script>
+
+<script src="../js/student.js"></script>
+
+<script>
+
+    function logout() {
+
+        localStorage.removeItem("student");
+
+        window.location.href = "student-login.html";
+
+    }
+
+    async function submitProfile() {
+
+        const student = JSON.parse(localStorage.getItem("student"));
+
+        if (!student) {
+
+            alert("Please Login First");
+
+            return;
+
+        }
+
+        try {
+
+            const response = await fetch(
+
+                `http://localhost:8080/api/profile/submit/${student.id}`,
+
+                {
+
+                    method: "POST"
+
+                }
+
+            );
+
+            const result = await response.json();
+
+            if (response.ok) {
+
+                alert(result.message);
+
+                location.reload();
+
+            }
+
+            else {
+
+                alert(result.message);
+
+            }
+
+        }
+
+        catch (e) {
+
+            alert("Server Error");
+
+        }
+
+    }
+
+    function deleteAccount() {
+
+        const student = JSON.parse(localStorage.getItem("student"));
+
+        if (!student) return;
+
+        if (confirm("Delete your account?")) {
+
+            deleteStudent(student.id);
+
+        }
+
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        loadDashboard();
+
+    });
+
+</script>
+
+</body>
+
+</html>

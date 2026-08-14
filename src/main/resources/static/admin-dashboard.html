@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | HODSM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/animation.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-user-shield"></i>
+
+        <span>HODSM Admin</span>
+
+    </div>
+
+    <nav>
+
+        <a href="admin-dashboard.html">
+
+            Dashboard
+
+        </a>
+
+        <a href="student-details.html">
+
+            Student Details
+
+        </a>
+
+        <a href="#"
+           onclick="logoutAdmin()">
+
+            Logout
+
+        </a>
+
+    </nav>
+
+</header>
+
+<section class="dashboard">
+
+    <h2>
+
+        Admin Dashboard
+
+    </h2>
+
+    <div class="dashboard-cards">
+
+        <div class="card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h3>Total Students</h3>
+
+            <h1 id="totalStudents">
+
+                0
+
+            </h1>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-clock"></i>
+
+            <h3>Pending</h3>
+
+            <h1 id="pendingStudents">
+
+                0
+
+            </h1>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <h3>Approved</h3>
+
+            <h1 id="approvedStudents">
+
+                0
+
+            </h1>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-circle-xmark"></i>
+
+            <h3>Rejected</h3>
+
+            <h1 id="rejectedStudents">
+
+                0
+
+            </h1>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="search-box">
+
+        <input
+                type="text"
+                id="searchKeyword"
+                placeholder="Search by Name / PRN / Roll No / Email">
+
+        <button
+                onclick="searchStudent()">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            Search
+
+        </button>
+
+    </div>
+
+    <br>
+
+    <h3>
+
+        Pending Verification Requests
+
+    </h3>
+
+    <table class="table">
+
+        <thead>
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>Name</th>
+
+            <th>PRN</th>
+
+            <th>Department</th>
+
+            <th>Status</th>
+
+            <th>Action</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody id="pendingTableBody">
+
+        </tbody>
+
+    </table>
+
+</section>
+
+<script src="js/config.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/search.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/logout.js"></script>
+
+</body>
+
+</html>
