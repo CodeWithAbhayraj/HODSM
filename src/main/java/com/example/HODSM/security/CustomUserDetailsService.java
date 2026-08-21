@@ -24,6 +24,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     public CustomUserDetailsService(StudentRepository studentRepository,
                                     AdminRepository adminRepository) {
 
+
         this.studentRepository = studentRepository;
         this.adminRepository = adminRepository;
     }
@@ -39,6 +40,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         Student student = studentRepository.findByEmail(email).orElse(null);
 
         if (student != null) {
+
 
             return User.builder()
                     .username(student.getEmail())
@@ -76,5 +78,6 @@ public class CustomUserDetailsService implements UserDetailsService {
         throw new UsernameNotFoundException(
                 "User not found with email : " + email
         );
+
     }
 }
