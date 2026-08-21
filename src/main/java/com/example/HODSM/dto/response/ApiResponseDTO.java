@@ -7,9 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ApiResponseDTO {
+public class ApiResponseDTO
+{
 
     private boolean success;
     private String message;
     private String token;
+
 }
