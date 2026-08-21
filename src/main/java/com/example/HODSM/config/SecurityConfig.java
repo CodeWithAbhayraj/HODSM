@@ -24,6 +24,7 @@ public class SecurityConfig {
                           PasswordEncoder passwordEncoder,
                           JwtAuthenticationFilter jwtAuthenticationFilter) {
 
+
         this.customUserDetailsService = customUserDetailsService;
         this.passwordEncoder = passwordEncoder;
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
@@ -40,6 +41,7 @@ public class SecurityConfig {
     public DaoAuthenticationProvider authenticationProvider() {
 
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+
 
         provider.setUserDetailsService(customUserDetailsService);
         provider.setPasswordEncoder(passwordEncoder);
