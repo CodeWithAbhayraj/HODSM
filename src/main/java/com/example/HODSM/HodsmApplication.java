@@ -9,7 +9,6 @@ public class HodsmApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HodsmApplication.class, args);
 	}
-
 }
 
 
