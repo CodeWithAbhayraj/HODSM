@@ -23,4 +23,5 @@ public interface AdminService {
 
     List<StudentProfileResponseDTO> searchStudent(String keyword);
 
+
 }
