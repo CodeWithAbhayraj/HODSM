@@ -51,7 +51,6 @@ public class DataInitializer {
                 System.out.println("=========================================");
 
             }
-
         };
     }
 }
