@@ -14,5 +14,4 @@ public interface StudentService {
     StudentResponseDTO getStudentById(Long studentId);
 
     ApiResponseDTO deleteStudent(Long studentId);
-
 }
