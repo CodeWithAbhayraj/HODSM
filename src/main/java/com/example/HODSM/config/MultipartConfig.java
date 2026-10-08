@@ -17,5 +17,4 @@ public class MultipartConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/uploads/**")
                 .addResourceLocations("file:" + uploadDir + "/");
     }
-
 }
