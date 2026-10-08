@@ -36,7 +36,6 @@ public class SecurityConfig {
 
         return configuration.getAuthenticationManager();
     }
-
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
 
