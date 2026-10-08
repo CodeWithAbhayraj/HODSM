@@ -45,7 +45,6 @@ public class DataInitializer {
                 System.out.println("=========================================");
 
             } else {
-
                 System.out.println("=========================================");
                 System.out.println(" Admin Already Exists");
                 System.out.println("=========================================");
