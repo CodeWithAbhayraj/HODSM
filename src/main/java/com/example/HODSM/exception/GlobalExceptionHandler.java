@@ -64,21 +64,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
     }
 
-//    @ExceptionHandler(BadRequestException.class)
-//    public ResponseEntity<ErrorResponseDTO> handleBadRequest(
-//            BadRequestException ex,
-//            HttpServletRequest request) {
-//
-//        ErrorResponseDTO response = new ErrorResponseDTO(
-//                LocalDateTime.now(),
-//                HttpStatus.BAD_REQUEST.value(),
-//                "Bad Request",
-//                ex.getMessage(),
-//                request.getRequestURI()
-//        );
-//
-//        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-//    }
+
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationException(
@@ -93,21 +79,6 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
 
-//    @ExceptionHandler(Exception.class)
-//    public ResponseEntity<ErrorResponseDTO> handleGlobalException(
-//            Exception ex,
-//            HttpServletRequest request) {
-//
-//        ErrorResponseDTO response = new ErrorResponseDTO(
-//                LocalDateTime.now(),
-//                HttpStatus.INTERNAL_SERVER_ERROR.value(),
-//                "Internal Server Error",
-//                ex.getMessage(),
-//                request.getRequestURI()
-//        );
-//
-//        return new ResponseEntity<>(response,
-//                HttpStatus.INTERNAL_SERVER_ERROR);
-//    }
+
 
 }
