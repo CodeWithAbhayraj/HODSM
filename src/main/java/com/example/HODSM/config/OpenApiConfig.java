@@ -25,7 +25,6 @@ public class OpenApiConfig {
                 .addSecurityItem(
                         new SecurityRequirement().addList(securitySchemeName)
                 )
-
                 .components(
                         new Components()
                                 .addSecuritySchemes(
