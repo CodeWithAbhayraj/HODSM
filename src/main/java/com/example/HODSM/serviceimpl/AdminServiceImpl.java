@@ -27,6 +27,7 @@ import java.util.stream.Collectors;
 @Service
 public class AdminServiceImpl implements AdminService {
 
+
     private final AdminRepository adminRepository;
     private final StudentRepository studentRepository;
     private final StudentProfileRepository studentProfileRepository;
