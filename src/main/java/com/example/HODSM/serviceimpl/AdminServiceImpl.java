@@ -36,6 +36,7 @@ public class AdminServiceImpl implements AdminService {
     private final JwtService jwtService;
     private final CustomUserDetailsService customUserDetailsService;
 
+
     public AdminServiceImpl(
             AdminRepository adminRepository,
             StudentRepository studentRepository,
