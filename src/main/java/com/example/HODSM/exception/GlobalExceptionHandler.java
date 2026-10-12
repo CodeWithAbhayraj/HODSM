@@ -61,6 +61,7 @@ public class GlobalExceptionHandler {
                 request.getRequestURI()
         );
 
+
         return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
     }
 
