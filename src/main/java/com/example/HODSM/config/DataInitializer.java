@@ -34,6 +34,7 @@ public class DataInitializer {
                         .password(passwordEncoder.encode(adminPassword))
                         .build();
 
+
                 adminRepository.save(admin);
 
                 System.out.println("=========================================");
