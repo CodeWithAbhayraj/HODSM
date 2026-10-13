@@ -22,4 +22,5 @@ public interface AdminService {
     ApiResponseDTO rejectStudent(Long profileId);
 
     List<StudentProfileResponseDTO> searchStudent(String keyword);
+
 }
