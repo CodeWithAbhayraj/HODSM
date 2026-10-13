@@ -11,10 +11,13 @@ public class MultipartConfig implements WebMvcConfigurer {
     @Value("${upload.dir}")
     private String uploadDir;
 
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
         registry.addResourceHandler("/uploads/**")
                 .addResourceLocations("file:" + uploadDir + "/");
+
+
     }
 }
