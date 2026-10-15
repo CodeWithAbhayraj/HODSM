@@ -5,5 +5,4 @@ public enum Department {
     MCA,
 
     MBA
-
 }
